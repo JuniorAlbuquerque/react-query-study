@@ -1,20 +1,16 @@
-import React, { useState } from 'react';
-import './App.css';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import Pokemons from './components/Pokemons/intex';
+import "./App.css";
+import { QueryClient, QueryClientProvider } from "react-query";
+import Pokemons from "./components/Pokemons";
 
 const queryClient = new QueryClient();
 
 function App() {
-  const [showList, setShowList] = useState(false)
-
   return (
     <QueryClientProvider client={queryClient}>
-      <button onClick={() => setShowList(true)}>Show Pokemon List</button>
-      {
-        showList && 
-        <Pokemons onClose={() => setShowList(false)} />
-      }
+      <div className="container">
+        <h1>Pokedex with React Query</h1>
+        <Pokemons />
+      </div>
     </QueryClientProvider>
   );
 }
