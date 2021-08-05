@@ -1,5 +1,7 @@
 import React from "react";
 import usePokemon from "../../data/hooks/pokemon";
+import Tilt from "react-parallax-tilt";
+
 interface IPokemon {
   name: string;
 }
@@ -29,14 +31,16 @@ const OnePokemon: React.FC<IPokemon> = ({ name }) => {
 
         <div className="abilities">
           {pokemonData?.abilities?.map((item: any) => (
-            <span>{item?.ability?.name}</span>
+            <span key={item?.ability?.url}>{item?.ability?.name}</span>
           ))}
         </div>
       </div>
-      <img
-        src={pokemonData?.sprites?.other?.dream_world?.front_default}
-        alt=""
-      />
+      <Tilt tiltMaxAngleX={14} tiltMaxAngleY={14} className="pokeImg">
+        <img
+          src={pokemonData?.sprites?.other?.dream_world?.front_default}
+          alt=""
+        />
+      </Tilt>
     </div>
   );
 };
