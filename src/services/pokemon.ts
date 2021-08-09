@@ -9,6 +9,7 @@ interface IAbilities {
 
 interface IPokemon {
   height: number;
+  id: number;
   name: string;
   weight: number;
   abilities: IAbilities[];

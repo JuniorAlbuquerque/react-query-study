@@ -9,6 +9,10 @@ button {
   transition: 0.2s ease-in-out;
 }
 
+input {
+  font-family: "Poppins", sans-serif;
+}
+
 button:hover {
   filter: brightness(90%);
 }

@@ -126,3 +126,33 @@
   border-radius: 8px;
   color: #fbfcff;
 }
+
+.form input {
+  padding: 16px;
+  border-radius: 4px;
+  border: 1px solid #c7c7c7;
+}
+
+.form .valid-input {
+  outline: none;
+  border: 2px solid green;
+}
+
+.form .valid-input:focus {
+  outline: none;
+  border: 2px solid green;
+}
+
+.form .invalid-input {
+  outline: none;
+  border: 2px solid red;
+}
+
+.form .invalid-input:focus {
+  outline: none;
+  border: 2px solid red;
+}
+
+*:focus {
+  outline: none;
+}
