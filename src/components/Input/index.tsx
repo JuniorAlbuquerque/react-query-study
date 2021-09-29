@@ -6,6 +6,8 @@ interface IInput {
   error?: string;
   isTouched?: boolean;
   isSubmitted?: boolean;
+  isOne?: boolean;
+  isTwo?: boolean;
 }
 
 const Input: React.FC<IInput> = ({
@@ -14,11 +16,14 @@ const Input: React.FC<IInput> = ({
   error,
   isTouched,
   isSubmitted,
+  isOne,
+  isTwo,
   ...rest
 }) => {
   const selectStyle = {
     error: (isSubmitted && error) || error,
-    default: !isTouched && !error,
+    default: !isTouched,
+    success: !error,
   };
 
   const chooseClassname = () => {
@@ -30,7 +35,9 @@ const Input: React.FC<IInput> = ({
       return "";
     }
 
-    return "valid-input";
+    if (selectStyle.success) {
+      return "valid-input";
+    }
   };
 
   return (
@@ -44,13 +51,18 @@ const Input: React.FC<IInput> = ({
     >
       <input
         type="text"
-        {...register(name, { keepTouched: false })}
+        {...register(name)}
         {...rest}
         style={{
           width: "90%",
         }}
         className={chooseClassname()}
       />
+      Dirty:
+      {isOne ? "S" : "n"}
+      <br />
+      DirtyField:
+      {isTwo ? "S" : "n"}
       {error && (
         <span style={{ color: "#e45", fontWeight: "bold" }}>{error}</span>
       )}
