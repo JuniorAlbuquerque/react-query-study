@@ -43,13 +43,9 @@ const HookForm: React.FC = () => {
     register,
     reset,
     handleSubmit,
-    setValue,
+    // setValue,
     // unregister,
-    formState: {
-      errors,
-      touchedFields,
-      // isSubmitted
-    },
+    formState: { errors, touchedFields, isSubmitted },
   } = useForm<IPatient>({
     resolver: yupResolver(patientSchema),
     mode: "onBlur",
@@ -127,6 +123,7 @@ const HookForm: React.FC = () => {
               register={register}
               error={errors?.nomeCompleto?.message}
               isTouched={touchedFields?.nomeCompleto}
+              isSubmitted={isSubmitted}
             />
 
             <label htmlFor="">Cpf</label>
@@ -135,6 +132,7 @@ const HookForm: React.FC = () => {
               register={register}
               error={errors?.cpf?.message}
               isTouched={touchedFields?.cpf}
+              isSubmitted={isSubmitted}
             />
 
             <label htmlFor="">Email</label>
@@ -143,6 +141,7 @@ const HookForm: React.FC = () => {
               register={register}
               error={errors?.email?.message}
               isTouched={touchedFields?.email}
+              isSubmitted={isSubmitted}
             />
           </div>
 
@@ -156,6 +155,7 @@ const HookForm: React.FC = () => {
               register={register}
               error={errors?.dependente?.nomeCompleto?.message}
               isTouched={touchedFields?.dependente?.nomeCompleto}
+              isSubmitted={isSubmitted}
             />
 
             <label htmlFor="">Cpf</label>
@@ -164,6 +164,7 @@ const HookForm: React.FC = () => {
               register={register}
               error={errors?.dependente?.cpf?.message}
               isTouched={touchedFields?.dependente?.cpf}
+              isSubmitted={isSubmitted}
             />
 
             <label htmlFor="">Email</label>
@@ -172,6 +173,7 @@ const HookForm: React.FC = () => {
               register={register}
               error={errors?.dependente?.email?.message}
               isTouched={touchedFields?.dependente?.email}
+              isSubmitted={isSubmitted}
             />
           </div>
         </div>
