@@ -8,7 +8,7 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <div className="container">
-        <h1>Pokedex with React Query - v1</h1>
+        <h2>Pokedex with React Query - v2</h1>
         <p style={{ marginBottom: 34 }}>Developed by: Jnr</p>
         <Pokemons />
       </div>
