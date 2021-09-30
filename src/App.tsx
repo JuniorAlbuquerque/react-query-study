@@ -9,7 +9,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <div className="container">
         <h4>Pokedex with React Query - (Teste) - v1</h4>
-        <p style={{ marginBottom: 38 }}>Developed by: Jnr Albuquerque</p>
+        <p style={{ marginBottom: 34 }}>Developed by: Jnr</p>
         <Pokemons />
       </div>
     </QueryClientProvider>
